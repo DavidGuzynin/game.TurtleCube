@@ -59,21 +59,21 @@ while True:
     player.forward(speed)
     
     if player.ycor() > 188 and speed == 2:
-        speed = -0.2
+        player.right(180)
     if player.ycor() > 188 and speed == -2:
-        speed = 0.2
+        player.right(180)
     if player.ycor() < -288 and speed == 2:
-        speed = -0.2
+        player.right(180)
     if player.ycor() < -288 and speed == -2:
-        speed = 0.2
+        player.right(180)
     if player.xcor() > 242 and speed == 2:
-        speed = -0.2
+        player.right(180)
     if player.xcor() > 242 and speed == -2:
-        speed = 0.2
+        player.right(180)
     if player.xcor() < -242 and speed == 2:
-        speed = -0.2
+        player.right(180)
     if player.xcor() < -242 and speed == -2:
-        speed = 0.2
+        player.right(180)
         
     d = math.sqrt(math.pow(player.xcor()-goal.xcor(),2) + math.pow(player.ycor()-goal.ycor(),2)) 
     if d < 20:
@@ -83,3 +83,11 @@ while True:
         text.write(score)
         goal.setposition(random.randint(-100,100), random.randint(-100,100))
         goal.showturtle()
+        
+    if score == 50:
+        text.clear()
+        text.goto(-20,-20)
+        text.color("blue")
+        text.clear()
+        text.write('YOU WIN')
+        break
